@@ -1,0 +1,74 @@
+<form #form="ngForm">
+
+    <fieldset class="scheduler-border" >
+      <legend class="scheduler-border">Informations Generales</legend>
+      <div class="form-group">
+        <label for="formGroupExampleInput">Nom</label>
+        <input type="text" name="nom" required minlength="4" [(ngModel)]="person.nom"  #id="ngModel"
+               class="form-control" id="formGroupExampleInput" placeholder="taper votre nom">
+
+        <div *ngIf="id.invalid && id.touched">
+          <p *ngIf="id.hasError('required')">this field is required</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">E-mail</label>
+        <input type="email" name="email" pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}" required minlength="4" [(ngModel)]="person.email"  #mail="ngModel"
+               class="form-control" id="formGroupExampleInput2" placeholder="taper votre email">
+
+        <div *ngIf="mail.invalid && mail.touched">
+          <p *ngIf="mail.hasError('required')">this field is required</p>
+          <p *ngIf="mail.hasError('pattern')">format d'email invalid</p>
+        </div>
+      </div>
+
+
+
+
+      <fieldset class="scheduler-border" >
+        <legend class="scheduler-border">Informations Generales</legend>
+
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Type de carte</label>
+          <input type="text" name="typrecarte"  required [(ngModel)]="person.typrdecarte"  #tc="ngModel"
+                 class="form-control" id="formGroupExampleInput3" placeholder="taper le type de votre carte">
+
+          <div *ngIf="tc.invalid && tc.touched">
+            <p *ngIf="tc.hasError('required')">this field is required</p>
+
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Numero de la carte :</label>
+          <input type="text" name="numerocarte" pattern="\d{16}" required [(ngModel)]="person.numerodecarte"  #nc="ngModel"
+                 class="form-control" id="formGroupExampleInput4" placeholder="taper le numero de votre carte">
+
+          <div *ngIf="nc.invalid && nc.touched">
+            <p *ngIf="nc.hasError('required')">this field is required</p>
+            <p *ngIf="nc.hasError('pattern')">numero doit etre 16 chiffres</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Date d'expiration</label>
+          <input type="text" name="dateexpiration" required [(ngModel)]="person.dateexpiration"  #dx="ngModel"
+                 class="form-control" id="formGroupExampleInput5" placeholder="taper le date d'expiration de votre carte">
+
+          <div *ngIf="dx.invalid && dx.touched">
+            <p *ngIf="dx.hasError('required')">this field is required</p>
+
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Code</label>
+          <input type="text" name="code" [disabled]="tc.invalid || nc.invalid || dx.invalid"
+                 class="form-control" id="formGroupExampleInput6" placeholder="taperle code">
+        </div>
+
+      </fieldset>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-2" [disabled]="form.invalid" (click)="ajouter()">Ajouter</button>
+      </div>
+    </fieldset>
+
+
+</form>
