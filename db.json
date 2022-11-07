@@ -1,0 +1,12 @@
+{
+  "stage": [
+    {
+      "id": 3,
+      "titre": "pfe",
+      "description": "projet fin etude",
+      "entreprise": "nti solution",
+      "disponible": true,
+      "nbrInteresse": 20
+    }
+  ]
+}

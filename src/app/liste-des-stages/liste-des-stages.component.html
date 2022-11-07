@@ -1,0 +1,40 @@
+<br>
+<br>
+<br>
+<div class="form-control">
+  <input   [(ngModel)]="aaa"  class="form-control me-sm-auto" type="text" placeholder="Search" aria-label="Search">
+
+</div>
+<table class="table table-dark">
+  <thead>
+  <tr>
+    <th scope="col">ref</th>
+    <th scope="col">titre</th>
+    <th scope="col">description</th>
+    <th scope="col">entreprise</th>
+    <th scope="col">disponible</th>
+    <th scope="col">nbrInteresse</th>
+    <th scope="col">+Interesse</th>
+    <th scope="col">sup</th>
+    <th scope="col">modif</th>
+
+  </tr>
+  </thead>
+  <tbody *ngFor="let p of liststage | filter:aaa ; let i=index">
+  <!--<tr *ngIf="prix>=p.price || prix == null" >-->
+  <tr>
+
+    <td>{{p.ref}}</td>
+    <td>{{p.titre}}</td>
+    <td >{{p.description}}</td>
+    <td >{{p.entreprise}}</td>
+    <td >{{p.disponible}}</td>
+    <td >{{p.nbrInteresse}}</td>
+    <td><button type="submit" id="int" class="btn btn-primary mb-2"  (click)="like(i)" [disabled]="p.disponible == false">INTERESSER </button></td>
+
+    <td><button type="submit" id="sup" class="btn btn-primary mb-2"  (click)="delete(p)">SUPRIMER</button></td>
+    <td><button  type="submit" id="modif" class="btn btn-primary mb-2"  [routerLink]="['/update',p.id]">modifier</button></td>
+
+  </tr>
+  </tbody>
+</table>
