@@ -1,0 +1,70 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "products": [
+    {
+      "id": 1,
+      "title": "Tshirt 1",
+      "price": 18,
+      "quantity": 0,
+      "like": 0
+    },
+    {
+      "id": 2,
+      "title": "Tshirt 2",
+      "price": 21,
+      "quantity": 10,
+      "like": 0
+    },
+    {
+      "id": 3,
+      "title": "Tshirt 3",
+      "price": 16,
+      "quantity": 8,
+      "like": 0
+    },
+    {
+      "id": 20,
+      "title": "Tshirt 1",
+      "price": 100,
+      "quantity": 50,
+      "like": 0
+    },
+    {
+      "id": 22,
+      "title": "Tshirt ck",
+      "price": 104,
+      "quantity": 50,
+      "like": 0
+    },
+    {
+      "id": 23,
+      "title": "Rabie zouita",
+      "price": 0,
+      "quantity": 0,
+      "like": 0
+    },
+    {
+      "id": "50",
+      "title": "Hello",
+      "price": "30",
+      "quantity": "12",
+      "like": "30"
+    }
+  ]
+}

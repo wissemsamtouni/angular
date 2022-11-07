@@ -1,0 +1,33 @@
+<h1>FORMULAIRE</h1>
+<form #form="ngForm">
+
+  <div class="form-group">
+    <label for="formGroupExampleInput">Id</label>
+    <input type="text" name="id" required minlength="4" [(ngModel)]="model.id" pattern="[0-9]+" required #id="ngModel"
+           class="form-control" id="formGroupExampleInput" placeholder="taper votre nom">
+
+    <div *ngIf="id.invalid && id.touched">
+      <p *ngIf="id.hasError('required')">this field is required</p>
+      <p *ngIf="id.hasError('pattern')">Only numbers</p>
+    </div>
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Title</label>
+    <input type="text" name="name" [(ngModel)]="model.title" pattern="[a-zA-Z]{3,20}$" required #fn="ngModel"
+           class="form-control" id="formGroupExampleInput2" placeholder="taper votre prenom">
+    <div *ngIf="fn.invalid && fn.touched">
+      <p *ngIf="fn.hasError('required')">this field is required</p>
+      <p *ngIf="fn.hasError('pattern')">respect the pattern</p>
+    </div>
+
+  </div>
+
+  <br>
+
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-2" [disabled]="form.invalid" (click)="save()">Submit</button>
+  </div>
+
+
+</form>
