@@ -6,41 +6,28 @@
 
 
   <br>
-  <div>
-  <div class="form-group">
-    <label for="formGroupExampleInput2">Ref</label>
-    <input type="text" name="ref" required pattern="\d{1,5}" #ref="ngModel" [(ngModel)]="Stage.ref" class="form-control" id="formGroupExampleInput2" placeholder="taper votre nom">
 
-
-  </div>
-    <div *ngIf="ref.invalid && ref.touched">
-      <p *ngIf="ref.hasError('required')">field ref is required</p>
-      <p *ngIf="ref.hasError('pattern')">respect the pattern("only digits")</p>
-    </div>
-
-
-  </div>
   <br>
   <div>
   <div class="form-group">
-    <label for="formGroupExampleInput2">Titre</label>
-    <input type="text" name="titre" required pattern="[a-zA-Z]{3,20}$" #titre="ngModel" [(ngModel)]="Stage.titre" class="form-control" id="formGroupExampleInput3" placeholder="taper votre prenom">
+    <label for="formGroupExampleInput3">First Name :</label>
+    <input type="text" name="titre" required pattern="[a-zA-Z]{3,20}$" #titre="ngModel" [(ngModel)]="Person.first_name" class="form-control" id="formGroupExampleInput3" placeholder="taper votre prenom">
 
   </div>
     <div *ngIf="titre.invalid && titre.touched">
-      <p *ngIf="titre.hasError('required')">titre is required</p>
+      <p *ngIf="titre.hasError('required')">Field First Name  is required</p>
       <p *ngIf="titre.hasError('pattern')">respect the pattern</p>
     </div>
   </div>
   <br>
   <div>
   <div class="form-group">
-    <label for="formGroupExampleInput2">Description</label>
-    <input type="text" name="description" required  pattern="[a-zA-Z]{3,20}$" #desc="ngModel"[(ngModel)]="Stage.description" class="form-control" id="formGroupExampleInput4" placeholder="taper votre prenom">
+    <label for="formGroupExampleInput3">Last Name :</label>
+    <input type="text" name="description" required  pattern="[a-zA-Z]{3,20}$" #desc="ngModel"[(ngModel)]="Person.last_name" class="form-control" id="formGroupExampleInput4" placeholder="taper votre prenom">
 
   </div>
     <div *ngIf="desc.invalid && desc.touched">
-      <p *ngIf="desc.hasError('required')">Field Deescription  is required</p>
+      <p *ngIf="desc.hasError('required')">Field Last Name  is required</p>
       <p *ngIf="desc.hasError('pattern')">respect the pattern</p>
     </div>
 
@@ -48,47 +35,16 @@
   <br>
   <div>
   <div class="form-group">
-    <label for="formGroupExampleInput2">Entreprise</label>
-    <input type="text" name="entreprise" required pattern="[a-zA-Z]{3,20}$" #entr="ngModel" [(ngModel)]="Stage.entreprise" class="form-control" id="formGroupExampleInput5" placeholder="taper votre prenom">
+    <label for="formGroupExampleInput4">Email Adress :</label>
+    <input type="text" name="entreprise" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #entr="ngModel" [(ngModel)]="Person.email_adress" class="form-control" id="formGroupExampleInput5" placeholder="taper votre prenom">
 
   </div>
     <div *ngIf="entr.invalid && entr.touched">
-      <p *ngIf="entr.hasError('required')">Field Entreprise  is required</p>
+      <p *ngIf="entr.hasError('required')">Field Email Adress is required</p>
       <p *ngIf="entr.hasError('pattern')">respect the pattern</p>
     </div>
   </div>
   <br>
-  <div>
-  <div class="form-group">
-    <label for="formGroupExampleInput2">Disponile</label><br>
-    <input name="disponible" required [value]="true" #a="ngModel" class="form-check-input" [(ngModel)]="Stage.disponible" type="radio" id="flexSwitchCheckDefault">
-    <label class="form-check-label" >
-      Oui
-    </label>
-  </div>
-  <div class="form-group">
-    <input name="disponible" required [value]="false" #b="ngModel" class="form-check-input" [(ngModel)]="Stage.disponible" type="radio" id="flexSwitchCheckDefault2">
-    <label class="form-check-label" >
-      Non
-    </label>
-  </div>
-  <div class="alert alert-danger" *ngIf="a.touched && a.invalid && b.touched && b.invalid ">
-    <p *ngIf="a.hasError('required') && b.hasError('required')">disponible is required</p>
-  </div>
-  </div>
-  <div>
-  <div class="form-group">
-    <label for="formGroupExampleInput2">nbrInteresse</label>
-    <input type="text" name="nbrInteresse" required pattern="\d{1,5}" #nbr="ngModel" [(ngModel)]="Stage.nbrInteresse" class="form-control" id="formGroupExampleInput6" placeholder="taper la quantité">
-
-  </div>
-    <div *ngIf="nbr.invalid && nbr.touched">
-      <p *ngIf="nbr.hasError('required')">Field nbrInteresse  is required</p>
-      <p *ngIf="nbr.hasError('pattern')">Only digits</p>
-    </div>
-
-  </div>
-
   <br>
 
   <div class="col-auto">

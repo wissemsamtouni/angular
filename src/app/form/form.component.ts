@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {stage} from "../model/stage";
-import {StageService} from "../services/stage.service";
+import {PersonService} from "../services/person.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {person} from "../model/person";
 
 @Component({
   selector: 'app-form',
@@ -11,15 +11,13 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class FormComponent implements OnInit {
 
 
-  liststage!:stage[];
-  Stage!:stage;
+
+  listpersons!:person[];
+  Person!:person
   public action !: string;
 
 
-  constructor(private StageService:StageService, private router: Router, private currentRoute: ActivatedRoute) { }
-
-
-
+  constructor(private PersonService:PersonService,private router: Router, private currentRoute: ActivatedRoute) { }
 
 
   ngOnInit(): void {
@@ -30,25 +28,25 @@ export class FormComponent implements OnInit {
     if(id!=null){
       this.action = "update";
       //update  +1 examen
-      this.StageService.getProductById(id).subscribe(
-        (data: stage)=> this.Stage= data
+      this.PersonService.getPersonById(id).subscribe(
+        (data: person)=> this.Person= data
       )
     }else
     {
       this.action = "save";
-      this.Stage=new stage();
+      this.Person=new person();
     }
 
   }
   save(){if(this.action == "save"){
 
 
-    this.StageService.postStage(this.Stage).subscribe(()=>this.router.navigate(['Consulter un stage']));
+    this.PersonService.postStage(this.Person).subscribe(()=>this.router.navigate(['/Afficher des personnes']));
 
-    alert("stage ajouter avec succes")
+    alert("personne ajouter avec succes")
   }
   else{
-    this.StageService.updateProduct(this.Stage.id,this.Stage).subscribe(()=>this.router.navigate(['Consulter un stage']));
+    this.PersonService.update(this.Person.id,this.Person).subscribe(()=>this.router.navigate(['Afficher des personnes']));
   }
   }
 }

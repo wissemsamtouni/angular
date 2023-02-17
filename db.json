@@ -1,12 +1,22 @@
 {
-  "stage": [
+  "person": [
     {
-      "id": 3,
-      "titre": "pfe",
-      "description": "projet fin etude",
-      "entreprise": "nti solution",
-      "disponible": true,
-      "nbrInteresse": 20
+      "first_name": "wissem",
+      "last_name": "samtouni",
+      "email_adress": "wissem.samtouni@esprit.tn",
+      "id": 4
+    },
+    {
+      "first_name": "hamza",
+      "last_name": "hamza",
+      "email_adress": "hamza.hmz@esprit.tn",
+      "id": 5
+    },
+    {
+      "first_name": "aymen",
+      "last_name": "ali",
+      "email_adress": "aymen@esprit.tn",
+      "id": 6
     }
   ]
 }
